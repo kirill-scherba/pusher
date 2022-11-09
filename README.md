@@ -22,11 +22,11 @@ if err != nil {
 }
 
 // Create publisher
-pu := pusher.NewPusher("http://example.com:9091", "my_job", hostName)
+pusher := pusher.NewPusher("http://example.com:9091", "my_job", hostName)
 
 // Push metrics every 15 seconds
 for {
-    m, err := pu.Push(
+    m, err := pusher.Push(
         pusher.Metric("my_job_couner_2", rand.Float64()*10),
         pusher.Metric("my_job_couner_3", rand.Float64()*10),
         pusher.Metric("my_job_couner_4{label=\"val1\"}", rand.Float64()*100),
