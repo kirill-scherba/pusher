@@ -53,6 +53,11 @@ func (p *Pusher) Push(metrics ...string) (metricsRaw string, err error) {
 }
 
 // Metric make metric string from name and value
+func (p *Pusher) Metric(name string, value float64) string {
+	return Metric(name, value)
+}
+
+// Metric make metric string from name and value
 func Metric(name string, value float64) string {
 	return fmt.Sprintf("%s %f", name, value)
 }
