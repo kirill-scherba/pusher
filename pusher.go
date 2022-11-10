@@ -20,8 +20,8 @@ type Pusher struct {
 	instance string
 }
 
-// NewPusher creates new Pusher client
-func NewPusher(prometheusPushURL, job, instance string) (pusher *Pusher) {
+// New creates new Pusher client
+func New(prometheusPushURL, job, instance string) (pusher *Pusher) {
 	pusher = &Pusher{&http.Client{}, prometheusPushURL, job, instance}
 	return
 }
